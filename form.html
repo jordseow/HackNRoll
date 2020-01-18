@@ -6,7 +6,7 @@
 <head>
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-     <title>One Page Resume</title>
+     <title>Resume Details</title>
 
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
@@ -50,31 +50,46 @@
 
 <body>
     <div class="container center">
-        <br>
-        <div class="header-contact-image">
-          <img src="https://raw.githubusercontent.com/oziomek1/bt3103/master/src/images/meeting.jpg" class="img-fluid">
-          <h2 class="header-over-image-1"> <b>Contact Us</b> </h2>
-          <h5 class="header-over-image-2">Feel free to drop us a line below!</h5>
-        </div>
-        <hr>
-        <div class="alert alert-secondary text-white text-center nus-blue-bg">Thank you for your feedback, we will strive towards making OOPython better for you!</div>
+        <div class="alert alert-secondary text-white text-center nus-blue-bg">Resume Details</div>
 
         <div class="row justify-content">
           <div class="col-3"></div>
           <div class="col-9">
             <form class="needs-validation contact-form" id="feedbackForm" onsubmit="formSubmit(); return false;">
               <div class="name col-md-8 mb-3">
-                <label for="validationTooltip01">First name*</label>
-                <input type="text" class="form-control" id="name" placeholder="First name" required>
+                <label for="validationTooltip01">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Full Name" required>
                 <div class="invalid-feedback">Enter your name</div>
               </div>
+              <div class="name col-md-8 mb-3">
+                <label for="validationTooltip01">Contact Number</label>
+                <input type="text" class="form-control" id="contact" placeholder="Contact Number" required>
+                <div class="invalid-feedback">Enter your number</div>
+              </div>
               <div class="email col-md-8 mb-3">
-                <label for="validationTooltip02">Email Address*</label>
+                <label for="validationTooltip02">Email Address</label>
                 <input type="email" class="form-control" id="email" placeholder="Email Address" required>
                 <div class="invalid-feedback">Enter a valid email</div>
               </div>
-            
-              <div class="feedback-type col-md-8 mb-3">
+              <div class="input-group col-md-8 mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+
+              <div class="description col-md-8 mb-3">
+                <label for="description">Description</label>
+                <textarea class="form-control" rows="3" id="description" placeholder="A short description about yourself" required></textarea>
+              </div>
+              <div class="invalid-feedback">Kindly provide a short desscription
+              </div>
+
+              <!-- <div class="feedback-type col-md-8 mb-3">
                 <label for="validationTooltip03">Feedback Type</label>
                 <select class="custom-select" id="feedbackType" required>
                   <option value="">Select Option</option>
@@ -83,14 +98,26 @@
                   <option value="others">Others</option>
                 </select>
                 <div class="invalid-feedback">Select one option</div>
+              </div> -->
+              
+              <div class="skills col-md-8 mb-3">
+                <label for="skills">Skills</label>
+                <textarea class="form-control" rows="5" id="skills" placeholder="Details" required></textarea>
               </div>
+              <div class="invalid-feedback">Kindly elaborate more about your skills</div>
 
-              <div class="comments col-md-8 mb-3">
-                <label for="comment">Comments:</label>
-                <textarea class="form-control" rows="5" id="comment" placeholder="Details..." required></textarea>
+              <div class="experience col-md-8 mb-3">
+                <label for="experience">Experience</label>
+                <textarea class="form-control" rows="5" id="experience" placeholder="Past experiences" required></textarea>
               </div>
-              <div class="invalid-feedback">Kindly elaborate more about your feedback raised</div>
+              <div class="invalid-feedback">Kindly elaborate more about your past experiences </div>
 
+              <div class="hobbies col-md-8 mb-3">
+                <label for="hobbies">Hobbies</label>
+                <textarea class="form-control" rows="5" id="hobbies" placeholder="Some hobbies" required></textarea>
+              </div>
+              <div class="invalid-feedback">Kindly elaborate more about your hobbies</div>
+              
               <div class="col-md-8 mb-3 text-center">
                 <button class="btn btn-primary nus-orange-button" type="submit">Submit form</button>
               </div>
