@@ -8,6 +8,11 @@
 
      <title>One Page Resume</title>
 
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
      <style type="text/css">
         * { margin: 0; padding: 0; }
         body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
@@ -27,6 +32,8 @@
         dd { width: 600px; float: right; }
         dd.clear { float: none; margin: 0; height: 15px; }
      </style>
+
+     
 </head>
 
 <body>
@@ -115,6 +122,58 @@
     
     </div>
 
+    <div class="container center">
+        <br>
+        <div class="header-contact-image">
+          <img src="https://raw.githubusercontent.com/oziomek1/bt3103/master/src/images/meeting.jpg" class="img-fluid">
+          <h2 class="header-over-image-1"> <b>Contact Us</b> </h2>
+          <h5 class="header-over-image-2">Feel free to drop us a line below!</h5>
+        </div>
+        <hr>
+        <div class="alert alert-secondary text-white text-center nus-blue-bg">Thank you for your feedback, we will strive towards making OOPython better for you!</div>
+
+        <div class="row justify-content">
+          <div class="col-3"></div>
+          <div class="col-9">
+            <form class="needs-validation contact-form" id="feedbackForm" onsubmit="formSubmit(); return false;">
+              <div class="name col-md-8 mb-3">
+                <label for="validationTooltip01">First name*</label>
+                <input type="text" class="form-control" id="name" placeholder="First name" required>
+                <div class="invalid-feedback">Enter your name</div>
+              </div>
+              <div class="email col-md-8 mb-3">
+                <label for="validationTooltip02">Email Address*</label>
+                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                <div class="invalid-feedback">Enter a valid email</div>
+              </div>
+            
+              <div class="feedback-type col-md-8 mb-3">
+                <label for="validationTooltip03">Feedback Type</label>
+                <select class="custom-select" id="feedbackType" required>
+                  <option value="">Select Option</option>
+                  <option value="bugs">Bugs & Errors</option>
+                  <option value="suggestions">Suggestions & Improvements</option>
+                  <option value="others">Others</option>
+                </select>
+                <div class="invalid-feedback">Select one option</div>
+              </div>
+
+              <div class="comments col-md-8 mb-3">
+                <label for="comment">Comments:</label>
+                <textarea class="form-control" rows="5" id="comment" placeholder="Details..." required></textarea>
+              </div>
+              <div class="invalid-feedback">Kindly elaborate more about your feedback raised</div>
+
+              <div class="col-md-8 mb-3 text-center">
+                <button class="btn btn-primary nus-orange-button" type="submit">Submit form</button>
+              </div>
+
+            </form>  
+          </div> 
+        </div>
+
 </body>
+
+
 
 </html>
