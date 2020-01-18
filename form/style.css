@@ -23,6 +23,12 @@ h1 {
   margin-top: 5px;
 }
 
+h2 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  margin-top: 5px;
+}
+
 .alert {
   text-align: center;
   padding: 10px;
