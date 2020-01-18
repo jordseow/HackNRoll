@@ -46,6 +46,7 @@ function formSubmit(e) {
 //Send Message to Firebase(4)
 
 function sendMessage(name, email, password, bio, job, interest) {
+  
   let newFormMessage = formMessage.push();
   newFormMessage.set({
     name: name,
@@ -55,4 +56,5 @@ function sendMessage(name, email, password, bio, job, interest) {
     job: job,
     Interest: interest
   });
+  console.log(name);
 }
