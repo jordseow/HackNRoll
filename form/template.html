@@ -109,17 +109,14 @@
 
           <h1 class="fn">{{name}}</h1>
           <p>
-            Contact Number: <span class="tel">555-666-7777</span><br />
+            Contact Number: <span class="tel">{{contact}}</span><br />
             Email:
-            <a class="email" href="mailto:greatoldone@lovecraft.com"
-              >greatoldone@lovecraft.com</a
-            >
+            <a class="email">{{email}}</a>
             <br />
             <a
               class="email"
-              href="https://www.linkedin.com/in/joshua-choy-8ab45284/"
             >
-              My LinkedIn Profile</a
+              {{linkedin}}</a
             >
             <br />
           </p>
@@ -127,11 +124,7 @@
 
         <div id="objective">
           <p>
-            I am an outgoing and energetic (ask anybody) young professional,
-            seeking a career that fits my professional skills, personality, and
-            murderous tendencies. My squid-like head is a masterful problem
-            solver and inspires fear in who gaze upon it. I can bring world
-            domination to your organization.
+            {{bio}}
           </p>
         </div>
 
@@ -142,10 +135,10 @@
 
           <dt>Education</dt>
           <dd>
-            <h2>Withering Madness University - Planet Vhoorl</h2>
+            <h2>{{school}}</h2>
+            <span>{{period}}</span>
             <p>
-              <strong>Major:</strong> Public Relations<br />
-              <strong>Minor:</strong> Scale Tending
+              <strong>Major:</strong> {{pg_name}}<br />
             </p>
           </dd>
 
@@ -154,55 +147,30 @@
           <dt>Experience</dt>
           <dd>
             <h2>
-              Doomsday Cult
-              <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span>
+              {{company_name}}
+              <span>{{exp_period}}</span>
             </h2>
-            <ul>
-              <li>
-                Inspired and won highest peasant death competition among
-                servants
-              </li>
-              <li>Helped coordinate managers to grow cult following</li>
-              <li>Provided untimely deaths to all who opposed</li>
-            </ul>
 
-            <h2>
-              The Watering Hole
-              <span>Bartender/Server - Milwaukee, WI - 2009</span>
-            </h2>
-            <ul>
-              <li>Worked on grass-roots promotional campaigns</li>
-              <li>Reduced theft and property damage percentages</li>
-              <li>Janitorial work, Laundry</li>
-            </ul>
+            <p>
+              {{exp_Description}}
+            </p>
           </dd>
 
           <dd class="clear"></dd>
 
           <dt>Co-Curricular Activities</dt>
-          <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+          <dd>{{cca_Description}}</dd>
 
           <dd class="clear"></dd>
 
           <dt>Skills</dt>
           <dd>
-            <h2>Office skills</h2>
             <p>
-              Office and records management, database administration, event
-              organization, customer support, travel coordination
-            </p>
-
-            <h2>Computer skills</h2>
-            <p>
-              Microsoft productivity software (Word, Excel, etc), Adobe Creative
-              Suite, Windows
+              {{skills_Description}}
             </p>
           </dd>
 
           <dd class="clear"></dd>
-
-          <dt>References</dt>
-          <dd>Available on request</dd>
 
           <dd class="clear"></dd>
         </dl>
@@ -221,28 +189,52 @@
       data: {
         firebaseurl: "https://hacknroll-resume.firebaseio.com",
         name: "",
-        
+        contact: "",
+        email: "",
+        linkedin: "",
+        bio: "",
+        school: "",
+        period: "",
+        pg_name: "",
+        company_name: "",
+        exp_period: "",
+        exp_Description: "",
+        cca_Description: "",
+        skills_Description: ""
       },
       mounted: async function() {
         var enteremail = prompt("Please enter your email address");
         console.log(enteremail);
-        let entries = await fetch(this.firebaseurl + "/register.json")
+        let entries = await fetch(this.firebaseurl + "/register.json");
         let entriesData = await entries.json();
-        let lenOfEntries = entriesData.length
+        let lenOfEntries = entriesData.length;
         console.log(entriesData);
         let uid = "";
 
         for (each in entriesData) {
-            if (entriesData[each]["email"] == enteremail) {
-                uid = each;
-            }
+          if (entriesData[each]["email"] == enteremail) {
+            uid = each;
+          }
         }
 
-        let progressUrl =
-          this.firebaseurl + "/register/" + uid + ".json";
+        let progressUrl = this.firebaseurl + "/register/" + uid + ".json";
         let response = await fetch(progressUrl);
         let data = await response.json();
+
         this.name = data["name"];
+        this.contact = data["contact"];
+        this.email = data["email"];
+        this.linkedin = data["linkedin"];
+        this.bio = data["bio"];
+        this.school = data["school"];
+        this.period = data["period"];
+        this.pg_name = data["pg_name"];
+        this.company_name = data["company_name"];
+        this.exp_period = data["exp_period"];
+        this.exp_Description = data["exp_Description"];
+        this.cca_Description = data["cca_Description"];
+        this.skills_Description = data["skills_Description"];
+
         console.log(this.name);
       }
     });
