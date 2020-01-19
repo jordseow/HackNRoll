@@ -58,7 +58,15 @@
           <option value="design">Design</option>
           <option value="business">Business</option>
         </select>
-  
+
+        <form id="fileForm" class="form-horizontal" enctype="multipart/form-data">
+          <div class="form-group">
+              <label class="col-sm-3 control-label">Avatar</label>
+              <div class="col-sm-4">
+                  <input type="file" class="form-control" name="avatar" />
+              </div>
+          </div>
+      </form>
   
         <button type="submit" sendMessage()>Register</button>
     </form>
@@ -67,6 +75,8 @@
     <script src="app.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+    <!-- Script for -->
   
   <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#available-libraries -->
