@@ -15,7 +15,8 @@
 
 <body>
     <form action="" method="POST" id="registrationform">
-      <h1>Register</h1>
+      <h1>Resume Builder</h1>
+      <h2>Key in your details below</h2>
       <div class="alert">Message Sent</div>
       <fieldset>
         <!-- Section 1 -->
@@ -25,18 +26,28 @@
   
         <label class="" for="email">Email:</label>
         <input type="email" name="email" value="" id="email" required />
+
+        <label class="" for="LinkedIn">LinkedIn Profile URL:</label>
+        <input type="text" name="linkedIn" value="" id="linkedIn" required />
+
+        <label class="" for="bio">Bio:</label>
+        <textarea name="bio" id="bio" required></textarea>
   
-        <label for="password">password:</label>
-        <input type="password" name="password" value="" id="password" required />
       </fieldset>
   
       <fieldset>
         <!-- section 2 -->
-        <legend><span class="section">2</span>Profile</legend>
+        <legend><span class="section">2</span>Education</legend>
   
-        <label class="" for="bio">Bio:</label>
-        <textarea name="bio" id="bio" required></textarea>
-  
+        <label class="" for="School">School:</label>
+        <input type="text" name="school" value="" id="school" required />
+
+        <label class="" for="Period">Period:</label>
+        <input type="text" name="period" value="" id="period" required />
+        
+        <label class="" for="Program Name">Program Name:</label>
+        <input type="text" name="pg_name" value="" id="pg_name" required />
+        <!--
         <label for="job">Job Role:</label>
         <select name="job" id="job" required>
           <optgroup label="Web">
@@ -52,15 +63,43 @@
         </select>
         <br /><br />
         <label>Interest:</label>
+      -->
+    
+      </fieldset>
+
+      <fieldset>
+        <!-- section 3 -->
+        <legend><span class="section">3</span>Experience</legend>
+
+        <label class="" for="Company Name">Company Name:</label>
+        <input type="text" name="company_name" value="" id="company_name" required />
+
+        <label class="" for="Period">Period:</label>
+        <input type="text" name="exp_period" value="" id="exp_period" required />
+
+        <label class="" for="Description">Description:</label>
+        <textarea name="exp_Description" id="exp_Description" required></textarea>
+
+      </fieldset>
   
-        <select id="interest" required>
-          <option value="development">Development</option>
-          <option value="design">Design</option>
-          <option value="business">Business</option>
-        </select>
+      <fieldset>
+        <!-- section 4-->
+        <legend><span class="section">4</span>Co-Curricular Activities</legend>
+
+        <label class="" for="cca_Description">Description:</label>
+        <textarea name="cca_Description" id="cca_Description" required></textarea>
+
+      </fieldset>
+
+      <fieldset>
+        <!-- section 5-->
+        <legend><span class="section">5</span>Skills</legend>
+        <label class="" for="skills_Description">Description:</label>
+        <textarea name="skills_Description" id="skills_Description" required></textarea>
+      </fieldset>
+      
   
-  
-        <button type="submit" sendMessage()>Register</button>
+        <button type="submit" sendMessage()>Submit</button>
     </form>
 
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
