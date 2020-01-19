@@ -43,6 +43,11 @@ function formSubmit(e) {
   document.getElementById('registrationform').reset();
 }
 
+//Redirecting to another page
+function redirect() {
+  location.href = "./template.html"
+}
+
 //Send Message to Firebase(4)
 
 function sendMessage(name, email, password, bio, job, interest) {
@@ -56,5 +61,6 @@ function sendMessage(name, email, password, bio, job, interest) {
     job: job,
     Interest: interest
   });
+  redirect();
   console.log(name);
 }
