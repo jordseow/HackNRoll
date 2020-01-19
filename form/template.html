@@ -100,10 +100,7 @@
   <body>
     <div id="app">
       <hr />
-
       <div id="page-wrap" ng-app="">
-        <img src="images/cthulu.png" alt="Photo of Cthulu" id="pic" />
-
         <div id="contact-info" class="vcard">
           <!-- Microformats! -->
 
@@ -116,7 +113,7 @@
             <a
               class="email"
             >
-              {{linkedin}}</a
+              {{linkedIn}}</a
             >
             <br />
           </p>
@@ -191,7 +188,7 @@
         name: "",
         contact: "",
         email: "",
-        linkedin: "",
+        linkedIn: "",
         bio: "",
         school: "",
         period: "",
@@ -203,7 +200,7 @@
         skills_Description: ""
       },
       mounted: async function() {
-        var enteremail = prompt("Please enter your email address");
+        var enteremail = prompt("Please enter your email address to view your resume");
         console.log(enteremail);
         let entries = await fetch(this.firebaseurl + "/register.json");
         let entriesData = await entries.json();
@@ -224,7 +221,7 @@
         this.name = data["name"];
         this.contact = data["contact"];
         this.email = data["email"];
-        this.linkedin = data["linkedin"];
+        this.linkedIn = data["linkedIn"];
         this.bio = data["bio"];
         this.school = data["school"];
         this.period = data["period"];

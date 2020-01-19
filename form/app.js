@@ -24,7 +24,7 @@ function formSubmit(e) {
   let name = document.querySelector('#name').value;
   let contact = document.querySelector('#contact').value;
   let email = document.querySelector('#email').value;
-  let linkedin = document.querySelector('#linkedin').value;
+  let linkedIn = document.querySelector('#linkedIn').value;
   let bio = document.querySelector('#bio').value;
   let school = document.querySelector('#school').value;
   let period = document.querySelector('#period').value;
@@ -36,7 +36,7 @@ function formSubmit(e) {
   let skills_Description = document.querySelector('#skills_Description').value;
 
   //send message values
-  sendMessage(name, contact, email, linkedin, bio, school, period, pg_name, company_name, exp_period, exp_Description, cca_Description, skills_Description);
+  sendMessage(name, contact, email, linkedIn, bio, school, period, pg_name, company_name, exp_period, exp_Description, cca_Description, skills_Description);
 
   //Show Alert Message(5)
   document.querySelector('.alert').style.display = 'block';
@@ -57,14 +57,14 @@ function redirect() {
 
 //Send Message to Firebase(4)
 
-function sendMessage(name, contact, email, linkedin, bio, school, period, pg_name, company_name, exp_period, exp_Description, cca_Description, skills_Description) {
+function sendMessage(name, contact, email, linkedIn, bio, school, period, pg_name, company_name, exp_period, exp_Description, cca_Description, skills_Description) {
   
   let newFormMessage = formMessage.push();
   newFormMessage.set({
     name: name,
     contact: contact,
     email: email,
-    linkedin: linkedin,
+    linkedIn: linkedIn,
     bio: bio,
     school: school,
     period: period,
