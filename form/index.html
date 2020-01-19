@@ -97,19 +97,11 @@
         <label class="" for="skills_Description">Description:</label>
         <textarea name="skills_Description" id="skills_Description" required></textarea>
       </fieldset>
-      
-      <fieldset>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-          Select image to upload:
-          <input type="file" name="fileToUpload" id="fileToUpload">
-          <input type="submit" value="Upload Image" name="submit">
-         </form>
 
-         <button type="submit" sendMessage()>Submit</button>
-      </fieldset>
-  
+      <button type="submit" sendMessage()>Submit</button>
+       
     </form>
-
+    
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
     <script src="app.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -118,6 +110,20 @@
   <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#available-libraries -->
   
+       <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyDkg-3xdq5hR_mR-dxE1Rglez2lyMdEg3k",
+          authDomain: "hacknroll-resume.firebaseapp.com",
+          databaseURL: "https://hacknroll-resume.firebaseio.com",
+          projectId: "hacknroll-resume",
+          storageBucket: "hacknroll-resume.appspot.com",
+          messagingSenderId: "683649340894",
+          appId: "1:683649340894:web:d3b03c8dac05727e70794f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
      
   </body>
 
